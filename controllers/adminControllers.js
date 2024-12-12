@@ -48,8 +48,18 @@ const logIn = async(req, res)=> {
 
 }
 
+const getAdmin = async (req, res) => {
+  try {
+    const form = await AdminModel.find({})
+    res.status(200).json(form)
+  } catch (error) {
+    res.status(500).json({message: error.message})
+  }
+}
+
 
 module.exports = {
   signUp,
-  logIn
+  logIn,
+  getAdmin
 }

@@ -31,22 +31,23 @@ const logIn = async(req, res)=> {
     const User = await UserModel.findOne({email})
     if (User){
       const passwordMatch = await bcrypt.compare(password, User.password)
-      if(passwordMatch){
-        res.json("Success")
+      if (passwordMatch) {
+        // Check if the user has a role and if it's 'admin'
+        if (User.role && User.role === "admin") {
+          return res.json({ message: "Success", isAdmin: true });
+        } else {
+          return res.json({ message: "Success", isAdmin: false });
+        }
+      } else {
+        return res.status(401).json({ error: "Incorrect Password" });
       }
-      else {
-        res.status(401).json("Incorrect Password")
-      }
-      
-    }else{
-      res.status(401).json("Email does not exist")
-      return res.status(401)
+    } else {
+      return res.status(401).json({ error: "Email does not exist" });
     }
-  }catch(error){
-    res.status(500).json({error:error.message})
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
   }
-
-}
+};
 
 
 module.exports = {

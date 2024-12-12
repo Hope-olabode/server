@@ -1,10 +1,12 @@
 const  mongoose  = require("mongoose");
 
 const FormSchema = new mongoose.Schema({
+  date: { type: String },
+  email: { type: String },
   name: { type: String},
   country: { type: String},
   church: { type: String },
-  duration: { type: String },
+  evangelism_hours: { type: String, required: true },
   people_reached: { type: String },
   contacts_received: { type: String },
   bible_study_sessions: { type: String },
@@ -24,8 +26,7 @@ const FormSchema = new mongoose.Schema({
   prayer_requests: { type: String },
   overall_reflection_on_the_day: { type: String },
   three_things_must_do_tomorrow: { type: String },
-  date: { type: String },
-  email: { type: String },
+  
 }, { timestamps: true }
 );
 
