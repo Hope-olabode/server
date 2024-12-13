@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 // Route Imports
 const formRoute = require("./routes/formRoute");
 const authRoute = require("./routes/authRoute");
-const adminRoute = require("./routes/adminRoute");
+
 
 dotenv.config();
 
@@ -21,7 +21,7 @@ app.use(cors());
 // Routes
 app.use("/auth", authRoute);
 app.use("/form", formRoute);
-app.use("/admin", adminRoute);
+
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URL)
