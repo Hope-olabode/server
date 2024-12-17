@@ -19,7 +19,7 @@ const check = async(req, res)=> {
     const data = req.body
     console.log(data)
     console.log(data.date)
-    console.log(data.email)
+    console.log(data.userName)
     
     const User = await FormModel.findOne(data)
     

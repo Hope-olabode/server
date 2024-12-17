@@ -2,7 +2,7 @@ const  mongoose  = require("mongoose");
 
 const FormSchema = new mongoose.Schema({
   date: { type: String },
-  email: { type: String },
+  userName: { type: String },
   name: { type: String},
   country: { type: String},
   church: { type: String },
