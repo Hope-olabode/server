@@ -9,7 +9,7 @@ const signUp = async(req, res)=> {
     const existingUser = await UserModel.findOne({userName:data.userName});
     console.log(existingUser)
     if (existingUser) {
-      return res.status(400).json({error: "userName already exists"})
+      return res.status(400).json({error: "user name already exists"})
     }
     const hashedPassword = await bcrypt.hash(data.password, 10);
     const newUser = {
@@ -42,7 +42,7 @@ const logIn = async(req, res)=> {
         return res.status(401).json({ error: "Incorrect Password" });
       }
     } else {
-      return res.status(401).json({ error: "userName does not exist" });
+      return res.status(401).json({ error: "user does not exist" });
     }
   } catch (error) {
     return res.status(500).json({ error: error.message });
