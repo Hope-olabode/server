@@ -24,7 +24,7 @@ const FormSchema = new mongoose.Schema({
   thanksgiving: { type: String },
   repentance_or_struggles: { type: String },
   prayer_requests: { type: String },
-  overall_reflection_on_the_day: { type: String },
+  overall_reflection_and_evaluation_on_the_day: { type: String },
   three_things_must_do_tomorrow: { type: String },
   
 }, { timestamps: true }
