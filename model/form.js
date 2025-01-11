@@ -20,7 +20,7 @@ const FormSchema = new mongoose.Schema({
   sermons_or_bible_study_listened_to: { type: String },
   articles_written: { type: String },
   exercise: { type: String },
-  daily_reflection: { type: String },
+  sermon_reflection: { type: String },
   thanksgiving: { type: String },
   repentance_or_struggles: { type: String },
   prayer_requests: { type: String },
